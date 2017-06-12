@@ -11,22 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
+    <%= form.label :login_id %>
+    <%= form.text_field :login_id, id: :user_login_id, class: 'form-control' %>
+  </div>
+
+  <div class="field form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :user_name %>
+    <%= form.text_field :name, id: :user_name, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :e_mail %>
-    <%= form.text_field :e_mail, id: :user_e_mail %>
+  <div class="field form-group">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :user_email, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :password_digest %>
-    <%= form.text_field :password_digest, id: :user_password_digest %>
+  <div class="field form-group">
+    <%= form.label :password %>
+    <%= form.password_field :password, id: :user_password, class: 'form-control' %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :self_introduction %>
+    <%= form.text_area :self_introduction, id: :user_self_introduction, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
