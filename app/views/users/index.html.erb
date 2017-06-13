@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -15,9 +15,10 @@
       <tr>
         <td><%= link_to user.name, user %></td>
         <td>
-          <%= link_to 'Show', user %>
-          <%= link_to 'Edit', edit_user_path(user) %>
-          <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% if user == current_user %>
+            <%= link_to 'Edit', edit_user_path(user) %>
+            <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
         </td>
       </tr>
     <% end %>
@@ -25,5 +26,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New User', new_user_path %>
