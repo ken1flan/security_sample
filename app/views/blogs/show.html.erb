@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @blog.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @blog.body %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @blog.user_id %>
+</p>
+
+<% if @blog.user == current_user %>
+  <%= link_to 'Edit', edit_blog_path(@blog), class: "btn btn-default" %> |
+<% end %>
+<%= link_to 'Back', blogs_path %>
