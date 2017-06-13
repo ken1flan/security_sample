@@ -19,13 +19,26 @@
           <ul class="nav navbar-nav navbar-left">
             <li><%= link_to "Users", users_path %></li>
           </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if logged_in? %>
+              <li><%= link_to "Log out", session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Log in", new_session_path %></li>
+            <% end %>
+          </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
 
     <div class="container">
-      <% if notice %>
-        <div class="alert alert-success" role="alert"><%= notice %></div>
+      <% if flash[:notice]%>
+        <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
+      <% end %>
+      <% if flash[:warn]%>
+        <div class="alert alert-warning" role="alert"><%= flash[:warn] %></div>
+      <% end %>
+      <% if flash[:error]%>
+        <div class="alert alert-danger" role="alert"><%= flash[:error] %></div>
       <% end %>
     </div>
 
