@@ -16,7 +16,7 @@
     <% @blogs.each do |blog| %>
       <tr>
         <td><%= link_to blog.title, blog %></td>
-        <td><%= blog.user.name %></td>
+        <td><%= link_to blog.user.name, blog.user %></td>
         <td><%= blog.updated_at %></td>
         <td>
           <% if blog.user == current_user %>

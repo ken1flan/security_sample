@@ -1,19 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @blog.body %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @blog.user_id %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>
+      <%= @blog.title %>
+    </h1>
+  </div>
+  <div class="panel-body">
+    <%= simple_format @blog.body %>
+  </div>
+  <div class="panel-footer text-right">
+    Written by
+    <strong>
+      <%= link_to @blog.user.name, @blog.user %>
+    </strong>
+  </div>
+</div>
 
 <% if @blog.user == current_user %>
   <%= link_to 'Edit', edit_blog_path(@blog), class: "btn btn-default" %> |
