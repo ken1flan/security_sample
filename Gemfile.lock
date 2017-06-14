@@ -69,6 +69,8 @@ GEM
     concurrent-ruby (1.0.5)
     erubi (1.6.0)
     execjs (2.7.0)
+    faker (1.7.3)
+      i18n (~> 0.5)
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -195,6 +197,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
+  faker
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener_web
@@ -211,4 +214,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.14.6
+   1.15.1
