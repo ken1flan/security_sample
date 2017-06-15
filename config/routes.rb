@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   resources :blogs
   resources :users
+  resource :redirector, only: [:show]
+  
   root controller: 'top', action: 'show'
 
   if Rails.env.development?
