@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   resources :blogs, only: [:index, :show]
   resources :users do
-    get '/blogs/create', to: 'users/blogs#create', as: 'create_blog'
     resources :blogs, module: :users
   end
   resource :measurement_tag
