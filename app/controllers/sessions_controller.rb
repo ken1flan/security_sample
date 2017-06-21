@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       flash[:notice] = "Loged in"
       log_in user
-      redirect_to root_path
+      redirect_back_or user
     else
       flash[:warn] = "Log in failed"
       render :new

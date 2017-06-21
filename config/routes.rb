@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/blogs/create', to: 'blogs#create', as: 'create_blog'
   resources :blogs
   resources :users
+  resource :measurement_tag
   resource :redirector, only: [:show]
 
   root controller: 'top', action: 'show'

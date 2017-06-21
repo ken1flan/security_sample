@@ -19,3 +19,5 @@
   <%= link_to 'Edit', edit_blog_path(@blog), class: "btn btn-default" %> |
 <% end %>
 <%= link_to 'Back', blogs_path %>
+
+<%= raw @blog.user.measurement_tag&.body %>

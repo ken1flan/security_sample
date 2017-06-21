@@ -1,0 +1,12 @@
+<h1>
+  Measurement tag
+</h1>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= simple_format @measurement_tag.body %>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_measurement_tag_path, class: "btn btn-default" %> |
+<%= link_to 'Destroy', measurement_tag_path, method: :delete, data: { confirm: 'Are you sure?' } %>
