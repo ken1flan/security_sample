@@ -2,4 +2,4 @@
 
 <%= render 'form', blog: @blog %>
 
-<%= link_to 'Back', blogs_path %>
+<%= link_to 'Back', user_blogs_path(@blog.user) %>

@@ -8,29 +8,23 @@
       <th>Title</th>
       <th>User</th>
       <th>Updated at</th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @blogs.each do |blog| %>
       <tr>
-        <td><%= link_to blog.title, blog %></td>
-        <td><%= link_to blog.user.name, blog.user %></td>
-        <td><%= blog.updated_at %></td>
         <td>
-          <% if blog.user == current_user %>
-            <%= link_to 'Edit', edit_blog_path(blog), class: "btn btn-default" %>
-            <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to blog.title, blog %>
+          <% if blog.draft? %>
+            <span class="label label-warning">draft</span>
           <% end %>
         </td>
+        <td><%= link_to blog.user.name, blog.user %></td>
+        <td><%= blog.updated_at %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<% if logged_in? %>
-  <%= link_to 'New Blog', new_blog_path, class: "btn btn-primary" %>
-<% end %>

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @user.name %>'s Blogs</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>User</th>
+      <th>Updated at</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td>
+          <%= link_to blog.title, user_blog_path(blog.user, blog) %>
+          <% if blog.draft? %>
+            <span class="label label-warning">draft</span>
+          <% end %>
+        </td>
+        <td><%= link_to blog.user.name, blog.user %></td>
+        <td><%= blog.updated_at %></td>
+        <td>
+          <% if blog.user == current_user %>
+            <%= link_to 'Edit', edit_user_blog_path(blog.user, blog), class: "btn btn-default" %>
+            <%= link_to 'Destroy', user_blog_path(blog.user, blog), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if current_user == @user %>
+  <%= link_to 'New Blog', new_user_blog_path(current_user), class: "btn btn-primary" %>
+<% end %>

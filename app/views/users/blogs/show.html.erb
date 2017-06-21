@@ -19,8 +19,8 @@
 </div>
 
 <% if @blog.user == current_user %>
-  <%= link_to 'Edit', edit_blog_path(@blog), class: "btn btn-default" %> |
+  <%= link_to 'Edit', edit_user_blog_path(@blog.user, @blog), class: "btn btn-default" %> |
 <% end %>
-<%= link_to 'Back', blogs_path %>
+<%= link_to 'Back', user_blogs_path(@blog.user) %>
 
 <%= raw @blog.user.measurement_tag&.body %>
