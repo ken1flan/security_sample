@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :blogs
+  has_one :measurement_tag
 
   validates :login_id, presence: true, uniqueness: true
   validates :name, presence: true

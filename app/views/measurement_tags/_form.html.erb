@@ -1,0 +1,22 @@
+<%= form_with(model: measurement_tag, url: measurement_tag_path, local: true) do |form| %>
+  <% if measurement_tag.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(measurement_tag.errors.count, "error") %> prohibited this measurement_tag from being saved:</h2>
+
+      <ul>
+      <% measurement_tag.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :body %>
+    <%= form.text_area :body, id: :measurement_tag_body, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
