@@ -3,8 +3,10 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
   get '/blogs/create', to: 'blogs#create', as: 'create_blog'
-  resources :blogs
-  resources :users
+  resources :blogs, only: [:index, :show]
+  resources :users do
+    resources :blogs, module: :users
+  end
   resource :measurement_tag
   resource :redirector, only: [:show]
 

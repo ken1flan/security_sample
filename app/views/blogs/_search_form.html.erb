@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Search blogs
+  </div>
+  <div class="panel-body">
+    <%= form_tag(blogs_path, method: :get, class: 'form-inline') do %>
+      <div class="field form-group">
+        <%= label_tag "Text in title or body" %>
+        <%= text_field_tag :search_text, search_text, id: :search_text, class: 'form-control', placeholder: "Input word like 'cat'" %>
+      </div>
+      <div class="field form-group">
+        <%= label_tag "Created at" %>
+      </div>
+      <div class="field form-group">
+        <%= text_field_tag :search_start_at, search_start_at, id: :search_start_at, class: 'form-control', placeholder: 7.days.ago %>
+        〜
+        <%= text_field_tag :search_end_at, search_end_at, id: :search_end_at, class: 'form-control', placeholder: Time.zone.now %>
+      </div>
+      <%= submit_tag('Search', class: "btn btn-default") %>
+    <% end %>
+  </div>
+</div>
