@@ -36,6 +36,11 @@
     <%= form.text_area :self_introduction, id: :user_self_introduction, class: 'form-control' %>
   </div>
 
+  <div class="field form-group">
+    <%= form.label :homepage %>
+    <%= form.text_field :homepage, id: :user_homepage, class: 'form-control', placeholder: 'ex) http://somewhe.re/foo' %>
+  </div>
+
   <div class="actions">
     <%= form.submit class: 'btn btn-primary' %>
   </div>
