@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   get 'top/show'
 
   resource :session, only: [:new, :create, :destroy]
-  get '/blogs/create', to: 'blogs#create', as: 'create_blog'
   resources :blogs, only: [:index, :show]
   resources :users do
+    get '/blogs/create', to: 'users/blogs#create', as: 'create_blog'
     resources :blogs, module: :users
   end
   resource :measurement_tag
