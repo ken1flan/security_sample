@@ -1,24 +1,13 @@
-# README
+# Security sample for [Ruby on Rails Security Guide](http://guides.rubyonrails.org/security.html)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This sample application is a blog system, and you can try to attack.
 
-Things you may want to cover:
+# Set up
 
-* Ruby version
+```
+$ bin/setup
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Environment
+* Ruby version ... 2.4.1
+* System dependencies ... Sqlite
