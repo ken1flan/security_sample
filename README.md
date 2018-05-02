@@ -1,4 +1,4 @@
-# Security sample for [Ruby on Rails Security Guide](http://guides.rubyonrails.org/security.html)
+# Sample application for [Ruby on Rails Security Guide](http://guides.rubyonrails.org/security.html)
 
 This sample application is a blog system, and you can try to attack.
 
@@ -11,3 +11,6 @@ $ bin/setup
 # Environment
 * Ruby version ... 2.4.1
 * System dependencies ... Sqlite
+
+# Details
+See [wiki](https://github.com/ken1flan/security_sample/wiki).
