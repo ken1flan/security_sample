@@ -19,7 +19,7 @@
 </div>
 
 <% if @blog.user == current_user %>
-  <%= link_to 'Edit', edit_blog_path(@blog), class: "btn btn-default" %> |
+  <%= link_to 'Edit', edit_user_blog_path(current_user, @blog), class: "btn btn-default" %> |
 <% end %>
 <%= link_to 'Back', blogs_path %>
 
