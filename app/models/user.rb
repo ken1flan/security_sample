@@ -8,4 +8,5 @@ class User < ApplicationRecord
   validates :email, presence: true, format: { with: /\A[^@]+@[^@]+\Z/ }, uniqueness: true
   validates :password, presence: true, length: { minimum: 6 }
   validates :self_introduction, length: { maximum: 500 }
+  validates :homepage, format: { with: /^https?:\/\/.*$/, multiline: true }
 end

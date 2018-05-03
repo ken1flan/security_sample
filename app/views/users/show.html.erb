@@ -8,6 +8,15 @@
   </div>
 </div>
 
+<p>
+  <% if @user.homepage? %>
+    <%= link_to @user.homepage do %>
+      <span class="glyphicon glyphicon-home"></span>
+      Homepage
+    <% end %>
+  <% end %>
+</p>
+
 <%= link_to 'Blogs', user_blogs_path(@user), class: "btn btn-default" %>
 <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-default" %> |
 <%= link_to 'Back', users_path, class: "btn btn-default" %>
