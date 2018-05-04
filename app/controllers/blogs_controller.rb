@@ -7,15 +7,15 @@ class BlogsController < ApplicationController
     @search_end_at = params[:search_end_at]
 
     if @search_text.present?
-      @blogs = @blogs.where("title LIKE \"%#{@search_text}%\" OR body LIKE \"%#{@search_text}%\"")
+      @blogs = @blogs.where("title LIKE :search_text OR body LIKE :search_text", search_text: "%#{@search_text}%")
     end
 
     if @search_start_at.present?
-      @blogs = @blogs.where("created_at >= '#{@search_start_at}'")
+      @blogs = @blogs.where("created_at >= ?", @search_start_at)
     end
 
     if @search_end_at.present?
-      @blogs = @blogs.where("created_at <= '#{@search_end_at}'")
+      @blogs = @blogs.where("created_at <= ?", @search_end_at)
     end
   end
 
