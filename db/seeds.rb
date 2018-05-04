@@ -8,7 +8,8 @@ end
   (rand(10) + 5).times.each do
     user = users.sample
     created_at = Time.zone.now - (100 - before_day).day
-    user.blogs.create(title: Faker::Lorem.words((rand(3) + 2)).join(' '), body: Faker::Lorem.paragraphs((rand(10) + 3)).join("\n"), status: Blog.statuses[:published], created_at: created_at, updated_at: created_at)
+    status = [:published, :draft].sample
+    user.blogs.create(title: Faker::Lorem.words(rand(2..5)).join(' '), body: Faker::Lorem.paragraphs(rand(3..13)).join("\n"), status: status, created_at: created_at, updated_at: created_at)
   end
 end
 
