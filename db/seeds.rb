@@ -9,7 +9,7 @@ end
     user = users.sample
     created_at = Time.zone.now - (100 - before_day).day
     status = [:published, :draft].sample
-    user.blogs.create(title: Faker::Lorem.words((rand(3) + 2)).join(' '), body: Faker::Lorem.paragraphs((rand(10) + 3)).join("\n"), status: status, created_at: created_at, updated_at: created_at)
+    user.blogs.create(title: Faker::Lorem.words(rand(2..5)).join(' '), body: Faker::Lorem.paragraphs(rand(3..13)).join("\n"), status: status, created_at: created_at, updated_at: created_at)
   end
 end
 
