@@ -39,3 +39,5 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener_web'
 end
+
+gem 'admin', path: 'admin'
