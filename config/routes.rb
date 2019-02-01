@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Admin::Engine => '/admin'
+
   get 'top/show'
 
   resource :session, only: [:new, :create, :destroy]

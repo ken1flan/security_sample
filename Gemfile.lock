@@ -1,3 +1,9 @@
+PATH
+  remote: admin
+  specs:
+    admin (0.1.0)
+      rails (~> 5.2.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -219,6 +225,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-session_store
+  admin!
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   bootstrap-sass (~> 3.3.6)
