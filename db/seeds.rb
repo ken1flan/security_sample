@@ -1,7 +1,8 @@
+Administrator.create(login_id: 'admin', name: 'administrator', email: 'admin@example.com', password: 'password')
+
 users = 10.times.map do
   auth_info = Faker::Omniauth.google
-  self_introduction = Faker::Lorem
-  User.create(name: auth_info[:info][:name], login_id: auth_info[:info][:name].downcase.tr(' ', '.'), email: auth_info[:id_info]['email'], password: 'password', self_introduction: Faker::Lorem.paragraph )
+  User.create(name: auth_info[:info][:name], login_id: auth_info[:info][:name].downcase.tr(' ', '.'), email: auth_info[:info][:email], password: 'password', self_introduction: Faker::Lorem.paragraph )
 end
 
 100.times.each.with_index do |before_day|
