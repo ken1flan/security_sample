@@ -30,6 +30,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'faker'
+  gem 'pry-byebug'
+  gem 'pry-rails'
 end
 
 group :development do
