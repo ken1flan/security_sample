@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Search blogs
+  </div>
+  <div class="panel-body">
+    <%= form_tag(redirection_logs_path, method: :get, class: 'form-inline') do %>
+      <div class="field form-group">
+        <%= label_tag "To" %>
+        <%= text_field_tag :search_to, search_to, id: :search_to, class: 'form-control', placeholder: "https://rubyonrails.org" %>
+      </div>
+      <div class="field form-group">
+        <%= label_tag "Created at" %>
+      </div>
+      <div class="field form-group">
+        <%= text_field_tag :search_start_at, search_start_at, id: :search_start_at, class: 'form-control', placeholder: 7.days.ago %>
+        〜
+        <%= text_field_tag :search_end_at, search_end_at, id: :search_end_at, class: 'form-control', placeholder: Time.zone.now %>
+      </div>
+      <%= submit_tag('Search', class: "btn btn-default") %>
+    <% end %>
+  </div>
+</div>
