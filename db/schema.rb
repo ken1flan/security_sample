@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_01_134619) do
+ActiveRecord::Schema.define(version: 2019_02_05_103310) do
 
   create_table "administrators", force: :cascade do |t|
     t.string "login_id"
@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(version: 2019_02_01_134619) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_measurement_tags_on_user_id"
+  end
+
+  create_table "redirection_logs", force: :cascade do |t|
+    t.string "to"
+    t.string "referer"
+    t.string "remote_ip"
+    t.string "user_agent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["created_at"], name: "index_redirection_logs_on_created_at"
+    t.index ["to"], name: "index_redirection_logs_on_to"
   end
 
   create_table "sessions", force: :cascade do |t|
