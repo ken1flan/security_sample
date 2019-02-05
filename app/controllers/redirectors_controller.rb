@@ -1,6 +1,6 @@
 class RedirectorsController < ApplicationController
   def show
-    # do something
+    RedirectionLog.write(request)
     redirect_to params[:to]
   end
 end
