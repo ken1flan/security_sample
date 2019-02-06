@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<h1>Redirection Logs</h1>
+
+
+<%= render "search_form", search_to: @search_to, search_start_at: @search_start_at, search_end_at: @search_end_at %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Search result: <%= @redirection_logs.total_count %>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Created at</th>
+        <th>To</th>
+        <th>Referer</th>
+        <th>User agent</th>
+        <th>Remote ip</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @redirection_logs.each do |redirection_log| %>
+        <tr>
+          <td><%= redirection_log.id %></td>
+          <td><%= redirection_log.created_at %></td>
+          <td><%= redirection_log.to %></td>
+          <td><%= redirection_log.referer %></td>
+          <td><%= redirection_log.user_agent %></td>
+          <td><%= redirection_log.remote_ip %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= paginate @redirection_logs %>
+
+<br>

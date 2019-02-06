@@ -20,3 +20,14 @@ user.create_measurement_tag(body: '<script>console.log(document.cookie);</script
 (rand(10) + 5).times.each do
   user.blogs.create(title: Faker::Lorem.words((rand(3) + 2)).join(' '), body: Faker::Lorem.paragraphs((rand(10) + 3)).join("\n"), status: Blog.statuses[:published])
 end
+
+# redirection logs
+1000.times.each.with_index do |i|
+  RedirectionLog.create(
+    to: ['/', '/blogs'].sample,
+    referer: ['', 'http://localhost:3000', 'https://www.example.com'].sample,
+    user_agent: Faker::Internet.user_agent,
+    remote_ip: Faker::Internet.public_ip_v4_address,
+    created_at: Time.zone.now - (100 - i).day
+  )
+end
