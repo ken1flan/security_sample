@@ -12,9 +12,9 @@
         <%= label_tag "Created at" %>
       </div>
       <div class="field form-group">
-        <%= text_field_tag :search_start_at, search_start_at, id: :search_start_at, class: 'form-control', placeholder: 7.days.ago %>
+        <%= date_field_tag :search_start_at, search_start_at, id: :search_start_at, class: 'form-control' %>
         〜
-        <%= text_field_tag :search_end_at, search_end_at, id: :search_end_at, class: 'form-control', placeholder: Time.zone.now %>
+        <%= date_field_tag :search_end_at, search_end_at, id: :search_end_at, class: 'form-control' %>
       </div>
       <%= submit_tag('Search', class: "btn btn-default") %>
     <% end %>
