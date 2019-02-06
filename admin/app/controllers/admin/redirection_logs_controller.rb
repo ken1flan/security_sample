@@ -11,7 +11,7 @@ module Admin
       @redirection_logs = @redirection_logs.where(to: @search_to) if @search_to.present?
       @redirection_logs = @redirection_logs.where('created_at >= ?', @search_start_at) if @search_start_at.present?
       @redirection_logs = @redirection_logs.where('created_at < ?', @search_end_at) if @search_end_at.present?
-      @redirection_logs = @redirection_logs.all
+      @redirection_logs = @redirection_logs.page(params[:page]).per(10)
     end
   end
 end

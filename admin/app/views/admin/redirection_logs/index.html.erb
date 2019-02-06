@@ -6,7 +6,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    Search result: <%= @redirection_logs.size %>
+    Search result: <%= @redirection_logs.total_count %>
   </div>
   <table class="table">
     <thead>
@@ -34,5 +34,7 @@
     </tbody>
   </table>
 </div>
+
+<%= paginate @redirection_logs %>
 
 <br>
