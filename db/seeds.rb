@@ -28,6 +28,6 @@ end
     referer: ['', 'http://localhost:3000', 'https://www.example.com'].sample,
     user_agent: Faker::Internet.user_agent,
     remote_ip: Faker::Internet.public_ip_v4_address,
-    created_at: Time.zone.now - (100 - i).day
+    created_at: Time.zone.now - (100 - i / 10).day
   )
 end
