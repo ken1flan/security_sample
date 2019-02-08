@@ -23,12 +23,12 @@
     <tbody>
       <% @redirection_logs.each do |redirection_log| %>
         <tr>
-          <td><%= redirection_log.id %></td>
-          <td><%= redirection_log.created_at %></td>
-          <td><%= redirection_log.to %></td>
-          <td><%= redirection_log.referer %></td>
-          <td><%= redirection_log.user_agent %></td>
-          <td><%= redirection_log.remote_ip %></td>
+          <td class="word-break-all"><%= redirection_log.id %></td>
+          <td class="word-break-all"><%= redirection_log.created_at %></td>
+          <td class="word-break-all"><%= redirection_log.to %></td>
+          <td class="word-break-all"><%= redirection_log.referer %></td>
+          <td class="word-break-all"><%= redirection_log.user_agent %></td>
+          <td class="word-break-all"><%= redirection_log.remote_ip %></td>
         </tr>
       <% end %>
     </tbody>
