@@ -1,4 +1,4 @@
-<%= form_for(blog, url: user_blogs_path(blog.user, blog), local: true) do |form| %>
+<%= form_with(model: [blog.user, blog], local: true) do |form| %>
   <% if blog.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
