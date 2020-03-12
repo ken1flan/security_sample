@@ -32,6 +32,7 @@ group :development, :test do
   gem 'faker'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'rspec-rails', '~> 4.0.0.beta'
 end
 
 group :development do
