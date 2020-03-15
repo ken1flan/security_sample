@@ -1,10 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature 'Tops', type: :system do
-  background do
-    driven_by(:rack_test)
-  end
-
   scenario 'トップページを訪れる' do
     visit root_path
 
