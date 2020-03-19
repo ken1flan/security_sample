@@ -7,3 +7,12 @@ RSpec.configure do |config|
     driven_by :selenium, using: :chrome, options: { desired_capabilities: configure_chrome_capabilities }, screen_size: [1024, 768]
   end
 end
+
+def in_browser(name)
+  old_session = Capybara.session_name
+
+  Capybara.session_name = name
+  yield
+
+  Capybara.session_name = old_session
+end
