@@ -5,6 +5,9 @@ RSpec.configure do |config|
     args += %w[headless disable-gpu no-sandbox] if ENV['TEST_WITH_GUI_BROWSER'].blank?
     configure_chrome_capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(chromeOptions: { args: args, w3c: false })
     driven_by :selenium, using: :chrome, options: { desired_capabilities: configure_chrome_capabilities }, screen_size: [1024, 768]
+
+    Rails.application.routes.default_url_options[:host] = Capybara.current_session.server.host
+    Rails.application.routes.default_url_options[:port] = Capybara.current_session.server.port
   end
 end
 
