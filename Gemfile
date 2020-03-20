@@ -43,4 +43,9 @@ group :development do
   gem 'letter_opener_web'
 end
 
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+end
+
 gem 'admin', path: 'admin'
