@@ -31,6 +31,5 @@ RSpec.feature 'Session Hijack', type: :system do
       visit root_path
       expect(page).to have_text victim_user.name
     end
-    binding.pry
   end
 end
