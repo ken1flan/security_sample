@@ -16,3 +16,16 @@ def in_browser(name)
 
   Capybara.session_name = old_session
 end
+
+def cookie_value_from(name)
+  cookies = page.driver.browser.manage.all_cookies
+  cookie = cookies.find { |c| c[:name] == name }
+  cookie && cookie[:value]
+end
+
+def add_cookie(name, value)
+  page.driver.browser.manage.add_cookie(
+    name: name,
+    value: value.to_s
+  )
+end
