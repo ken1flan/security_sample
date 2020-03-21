@@ -24,4 +24,16 @@ RSpec.feature 'XSS', type: :system do
     visit blog_path(other_blog)
     expect(page.html).not_to include(user_measurement_tag.body)
   end
+
+  given(:clacker) { create(:user) }
+  given!(:clacker_measurement_tag) { create(:measurement_tag, user: clacker, body: '<script>alert(document.cookie);</script>') }
+  given(:clacker_blog) { create(:blog, user: clacker)}
+
+  scenario '加害者の仕掛けたjavascriptによってセッションIDの書かれたダイアログが表示される' do
+    visit root_path
+    victim_session_id = cookie_value_from('_session_id')
+
+    visit blog_path(clacker_blog)
+    accept_alert("_session_id=#{victim_session_id}")
+  end
 end
