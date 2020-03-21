@@ -11,9 +11,7 @@ RSpec.feature 'Open Redirector', type: :system do
       fill_in 'session_password' , with: administrator_password
       click_button 'Log in'
 
-      VCR.use_cassette('open_redirector/client_site') do
-        click_link 'Redirection logs'
-      end
+      click_link 'Redirection logs'
       expect(page).not_to have_text('https://en.wikipedia.org/wiki/Cat')
     end
 
