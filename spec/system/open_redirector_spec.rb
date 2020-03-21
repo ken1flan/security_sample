@@ -62,4 +62,23 @@ RSpec.feature 'Open Redirector', type: :system do
       expect(page).to have_text(root_url.gsub(%r{/$}, ''))
     end
   end
+
+  given(:spam_site_campaign_url) do
+    html = File.read("#{Rails.root}/outside/redirector/spam_site_campaign.html")
+    server = Capybara.current_session.server
+    html.gsub!(/localhost:3000/, "#{server.host}:#{server.port}")
+    out_filename = "#{Rails.root}/tmp/spam_site_campaign.html"
+    File.write(out_filename, html)
+    "file://#{out_filename}"
+  end
+
+  scenario 'フィッシングサイト' do
+    in_browser(:user) do
+      visit spam_site_campaign_url
+      click_link 'Sign up'
+
+      find('h1', text: 'Spam (food)')
+      expect(current_url).to eq 'https://en.wikipedia.org/wiki/Spam_(food)'
+    end
+  end
 end
