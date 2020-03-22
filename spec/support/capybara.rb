@@ -1,3 +1,7 @@
+Capybara.configure do |config|
+  config.default_max_wait_time = 30
+end
+
 RSpec.configure do |config|
   config.before(:each, type: :system) do |example|
     Capybara.session_name = :default
