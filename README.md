@@ -9,7 +9,7 @@ $ bin/setup
 ```
 
 # Environment
-* Ruby version ... 2.4.1
+* Ruby version ... 2.7.0
 * System dependencies ... Sqlite
 
 # Details
