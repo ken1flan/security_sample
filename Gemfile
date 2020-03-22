@@ -9,15 +9,15 @@ gem 'rails', '~> 6.0'
 
 gem 'activerecord-session_store'
 gem 'bcrypt', '~> 3.1.7'
-gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'coffee-rails', '~> 4.2'
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails'
 gem 'kaminari'
-gem 'puma', '~> 3.11'
-gem 'sass-rails', '~> 5.0'
-gem 'sqlite3'
+gem 'puma', '~> 4.1'
+gem 'sass-rails', '~> 6.0'
+gem 'sqlite3', '~> 1.4'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
@@ -29,7 +29,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 4.0.0.beta'
-  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 group :development do
