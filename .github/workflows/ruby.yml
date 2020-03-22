@@ -17,8 +17,12 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install libsqlite3-dev
-    - name: Build and test with Rake
+    - name: Install bundler
       run: |
         gem install bundler
+    - name: Bundle install
+      run: |
         bundle install --jobs 4 --retry 3
+    - name: Rspec
+      run: |
         bundle exec rspec
